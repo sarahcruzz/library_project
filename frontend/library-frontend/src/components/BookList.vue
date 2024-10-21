@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import api from '..services/api' // importa o serviço API (Axios)
+    import api from '@/services/api'; // importa o serviço API (Axios)
 
     export default {
         data() {
@@ -33,7 +33,7 @@
             editBook(book) { // Emite um evento para editar o livro
                 this.$emit('edit-book', book) // emite o evento 'edit-book'
             }
-        }
+        },
         mounted(){
             this.fetchBooks() // Busca os livros ao montar o componente
         }

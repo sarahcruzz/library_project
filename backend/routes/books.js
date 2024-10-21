@@ -3,7 +3,6 @@ const Book = require('../models/Book')  // Importamos o modelo Book
 const router = express.Router() // Criamos o roteador  
 
 // ** CRIAÇÃO (POST) ** 
-
 router.post('/', async (req, res) => { 
     const { title, author, year } = req.body;   // Extraímos os dados da requisição 
     try { 
@@ -16,7 +15,6 @@ router.post('/', async (req, res) => {
 }) 
 
 // ** LEITURA (PUT) ** 
-
 router.get('/', async (req, res) => { 
     try{ 
         const books = await Book.find() // Buscamos todos os livros 
@@ -27,7 +25,6 @@ router.get('/', async (req, res) => {
 }) 
 
 // *** ATUALIZAÇÃO (PUT) *** 
-
 router.put('/:id', async (req, res) => { 
     const { title, author, year} = req.body // Extraímos os novos dados 
     try { 
@@ -39,7 +36,6 @@ router.put('/:id', async (req, res) => {
 }) 
 
 // *** EXLUSÃO (DELETE) ***  
-
 router.delete('/:id', async (req, res) => { 
     try { 
         await Book.findByIdAndUpdate 
@@ -50,4 +46,4 @@ router.delete('/:id', async (req, res) => {
 }); 
  
 // Exportamos o roteador para ser usado no server.js 
-module.exports = router; 
+module.exports = router;
